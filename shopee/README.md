@@ -1,7 +1,3 @@
-### `views.py` Documentation
-
-This document provides a detailed explanation of the functionality of each view in the `views.py` file, including how the data is displayed in the API and how `auth.token` is implemented for authentication.
-
 ---
 
 #### **1. RegisterAPIView**
