@@ -45,7 +45,7 @@ class ProductCreateAPIView(CreateAPIView):
     """
     queryset = Product.objects.all  # Correct: Use `Product.objects.all()` instead of `Product.objects.all`
     serializer_class = ProductSerializer
-    permission_classes = []  # Only authenticated users can create a product
+    permission_classes = [IsAuthenticated]  # Only authenticated users can create a product
 
     # Improvement: Restrict this to staff users using IsAdminUser or custom permissions
 
@@ -67,7 +67,7 @@ class ProductDetailAPIView(RetrieveAPIView):
     """
     queryset = Product.objects.all()  # Query all products
     serializer_class = ProductSerializer
-    permission_classes = []  # Only authenticated users can view product details
+    permission_classes = [IsAuthenticated]  # Only authenticated users can view product details
 
 
 # Logout endpoint
@@ -76,7 +76,7 @@ class LogOutAPIView(APIView):
     Logs out the user by deleting their authentication token.
     """
     authentication_classes = [TokenAuthentication]  # Ensure token authentication
-    permission_classes = []  # Only authenticated users can access this endpoint
+    permission_classes = [IsAuthenticated]  # Only authenticated users can access this endpoint
 
     def post(self, request, *args, **kwargs):
         """
