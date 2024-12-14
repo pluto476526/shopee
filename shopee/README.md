@@ -1,5 +1,3 @@
----
-
 #### **1. RegisterAPIView**
 **Purpose:**
 Allows new users to register by providing their credentials (e.g., username and password).
